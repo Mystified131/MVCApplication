@@ -42,7 +42,9 @@ namespace MVCApplication.Controllers
                 return View(resultViewModel);
             }
 
-            return Redirect("/");
+            resultViewModel.Error = "A value is needed. Please return to the home page.";
+            return View(resultViewModel);
+
         }
 
     }

@@ -14,8 +14,9 @@ namespace MVCApplication.Controllers
     {
         public IActionResult Index()
         {
+            IndexViewModel indexViewModel = new IndexViewModel();
 
-            return View();
+            return View(indexViewModel);
         }
 
         public IActionResult Result()
@@ -42,7 +43,7 @@ namespace MVCApplication.Controllers
                 return View(resultViewModel);
             }
 
-            resultViewModel.Error = "A value is needed. Please return to the home page.";
+            resultViewModel.Error = "There is no numeric value to asses the square's attributes. Please return to the Home page.";
             return View(resultViewModel);
 
         }

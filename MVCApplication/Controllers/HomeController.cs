@@ -19,6 +19,12 @@ namespace MVCApplication.Controllers
             return View(indexViewModel);
         }
 
+        public IActionResult Error()
+        {
+
+            return View();
+        }
+
         public IActionResult Result()
         {
             ResultViewModel resultViewModel = new ResultViewModel();
@@ -41,10 +47,12 @@ namespace MVCApplication.Controllers
                 resultViewModel.Perimeter = qbert.Perimeter(resultViewModel.sidelength);
 
                 return View(resultViewModel);
+
+
             }
 
-            resultViewModel.Error = "There is no numeric value to asses the square's attributes. Please return to the Home page.";
-            return View(resultViewModel);
+
+            return Redirect("/Home/Error");
 
         }
 

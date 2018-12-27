@@ -8,16 +8,22 @@
 
 <br />
 
-<p>The area of the square would be: @Model.Area</p>
+@if (@Model.Area != 0)
+{
+
+    <p>The area of the square would be: @Model.Area</p>
+
+}
 
 <br />
 
-<p>The perimeter of the square would be: @Model.Perimeter</p>
+@if (@Model.Perimeter != 0)
+{
 
-<br />
+    <p>The perimeter of the square would be: @Model.Perimeter</p>
 
-<div asp-validation-summary="All"></div><br />
+}
+    <br />
 
-<p>@Model.Error</p><br />
+    <p>@Model.Error</p><br />
 
-<p><a asp-controller="Home" asp-action="Index">Home Page</a></p>
